@@ -9,24 +9,25 @@ files = os.listdir(arquivos)
 for file in files:
     copilamento = shutil.copy(f"{arquivos}/{file}", nuvem)
 
-    # criar a integração com o outlook
-    outlook = win32.Dispatch('outlook.application')
-    # criar um email
-    email = outlook.CreateItem(0)
-    # configurar as informações do seu e-mail
-    email.To = "administrativo@rodobrotto.com.br; carlos@rodobrotto.com.br; fiscal@rodobrotto.com.br; faturamento@rodobrotto.com.br; financeiro@rodobrotto.com.br"
-    email.Subject = "E-mail automático Back-Up Servidor"
-    email.HTMLBody = f"""
-    <p>RodoBrotto informa:</p>
 
-    <p>Back-Up efetuado com sucesso</p>
-    <p>Salvo na nuvem na pasta C:\Users\Usuario\OneDrive\TI\BACKUP_SERVIDOR</p>
-    <p>Arquivo \n{copilamento}</p>
+# criar a integração com o outlook
+outlook = win32.Dispatch('outlook.application')
 
-    <p>Prezados colaboradores,</p>
-    <p>Não responder este e-mail</p>
-    """
-    # anexo = "C://Users/joaop/Downloads/arquivo.xlsx"
-    # email.Attachments.Add(anexo)
+# criar um email
+email = outlook.CreateItem(0)
 
-    email.Send()
+# configurar as informações do seu e-mail
+email.To = "administrativo@rodobrotto.com.br; carlos@rodobrotto.com.br; fiscal@rodobrotto.com.br; faturamento@rodobrotto.com.br; financeiro@rodobrotto.com.br"
+email.Subject = "E-mail automático Back-Up Servidor"
+email.HTMLBody = f"""
+<p>RodoBrotto informa:</p>
+<p>Back-Up servidore fetuado com sucesso \n{copilamento}</p>
+<p>Prezados colaboradores,</p>
+<p>Não responder este e-mail</p>
+"""
+# anexo = "C://Users/joaop/Downloads/arquivo.xlsx"
+# email.Attachments.Add(anexo)
+
+email.Send()
+
+pyautogui.alert(f'Backup feito com sucesso arquivo \n{copilamento}')
