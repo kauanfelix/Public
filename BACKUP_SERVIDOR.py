@@ -30,4 +30,4 @@ email.HTMLBody = f"""
 
 email.Send()
 
-pyautogui.alert(f'Backup feito com sucesso arquivo \n{copilamento}')
+pyautogui.alert(f'Back-Up feito com sucesso arquivo \n{copilamento}')
