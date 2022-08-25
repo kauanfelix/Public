@@ -11,7 +11,7 @@ rafitec = 4763
 seg = 1.5
 seg2 = 5
 # tabela
-planilha = pd.read_excel('C:/ROBOCTE.xlsx')
+planilha = pd.read_excel('C:/BOT_CTE.xlsx')
 # filtros da tabela
 tabela = planilha.loc[planilha['Unnamed: 1'] == 'ok']
 # listar de acordo com que foi filtrado
