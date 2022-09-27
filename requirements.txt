@@ -1,4 +1,7 @@
+streamlit==1.11.1
 plotly
-pandas
-streamlit
+requests
 openpyxl
+pandas
+gsheetsdb
+gspread
