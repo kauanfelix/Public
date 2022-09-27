@@ -1,5 +1,6 @@
 
 import gspread
+import streamlit as st
 
 credentials = {
   "type": "service_account",
@@ -18,4 +19,4 @@ gc = gspread.service_account_from_dict(credentials)
 
 sh = gc.open("MAIN")
 
-print(sh.sheet1.get('A1'))
+st.table(sh.sheet1.get('A1'))
