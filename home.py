@@ -30,9 +30,10 @@ with tab1:
     redespacho = st.info(f'U$ {(((kg / 1000) * peso) + aduana)}')
     st.info(f'R$ {redespacho * iof}')
 
+with tab2:
+    st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
+
 with tab3:
     df = pd.read_excel(io='C:/Users/admin/PycharmProjects/pythonProject/testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
     st.dataframe(df)
 
-with tab2:
-    st.write("BACK MARKET: [BACKMARKET](https://www.backmarket.com/en-us)")
