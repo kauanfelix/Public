@@ -34,5 +34,5 @@ with tab3:
     df = pd.read_excel(io='C:/Users/admin/PycharmProjects/pythonProject/testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
     st.dataframe(df)
 
-with tab3:
+with tab2:
     st.write("BACK MARKET: [BACKMARKET](https://www.backmarket.com/en-us)")
