@@ -27,7 +27,7 @@ with tab1:
     peso = st.slider('Peso:', 100, 2000, step=100)
     kg = st.slider('Preço KG:', 26.50, 27.50, 27.50, 0.50)
     aduana = st.slider('Aduana:', 0, 40, 20, 5)
-    redespacho = st.info(f'U$ {(((kg / 1000) * peso) + aduana)}')
+    redespacho = st.info(f'U$ {(kg / 1000) * peso}')
     st.write(redespacho)
     #st.info(f'R$ {iof * redespacho}')
 
