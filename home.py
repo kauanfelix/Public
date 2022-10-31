@@ -35,6 +35,6 @@ with tab2:
     st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
 
 with tab3:
-    df = pd.read_excel(io='C:/Users/admin/PycharmProjects/pythonProject/testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
+    df = pd.read_excel(io='testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
     st.dataframe(df)
 
