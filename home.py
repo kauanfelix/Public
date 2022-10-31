@@ -33,6 +33,8 @@ with tab1:
 
 with tab2:
     st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
+    st.write("COMPRAS PARAGUAI: [NOVO](https://mobile.comprasparaguai.com.br/)")
+    st.write("APPLE: [NOVO](https://www.apple.com/)")
 
 with tab3:
     df = pd.read_excel(io='testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
