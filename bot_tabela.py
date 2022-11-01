@@ -13,7 +13,7 @@ variaveis = tabela[['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unn
 # abrir gestran
 pyautogui.click(x=xgestran, y=ygestran)
 time.sleep(seg2)
-pyautogui.alert('Leitura feita com Sucesso, Gestran está aberto na tabela')
+pyautogui.alert('Leitura feita com Sucesso, Gestran está aberto na tabela?')
 # processo
 for repita in variaveis:
     codempresa = int(repita[0])  # Unnamed: 4
