@@ -5,7 +5,7 @@ xgestran = 121
 ygestran = 741
 seg = 1.5
 # tabela
-planilha = pd.read_excel(io='BOT.xlsx', engine='openpyxl', sheet_name='LER_ABA')
+planilha = pd.read_excel(io='bot.xlsx', engine='openpyxl', sheet_name='LER_ABA')
 # filtros da tabela
 tabela = planilha.loc[planilha['Unnamed: 1'] == 'ok']
 # listar de acordo com que foi filtrado
