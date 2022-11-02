@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 import requests
 import pandas as pd
 
-st.set_page_config(page_title="Gestão", page_icon=":bar-chart:", layout="centered")
+st.set_page_config(page_title="GESTÃO PESSOAL", page_icon=":bar-chart:", layout="centered")
 # with st.sidebar:
 #    selected = option_menu(menu_title=None, ["Fornecedores", 'Simulador', 'Importações', 'Gráficos'], icons=['credit-card', 'cash', 'cart', 'bar-chart'], menu_icon="cast", default_index=1)
 selected = option_menu(None, [ 'Financeiro', 'Importações'],
