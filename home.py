@@ -50,14 +50,13 @@ with st.sidebar:
     selected
     
 if selected == 'Fornecedores':
-    st.tittle(selected)
+    st.title(selected)
     st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
     st.write("COMPRAS PARAGUAI: [NOVO](https://mobile.comprasparaguai.com.br/)")
     st.write("APPLE: [NOVO](https://www.apple.com/)")
     
 if selected == 'Simulador':
-    st.tittle(selected)
-    st.title('Simulador importação')
+    st.title(selected)
     preco = st.number_input('Preço:', 1, 10000, step=100)
     imposto = st.number_input('Imposto:', 0, 60, 7)
     taxaloja = st.number_input('Taxa Loja:', 0.00, 4.99, 2.99, 1.00)
