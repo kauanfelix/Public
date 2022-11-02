@@ -46,15 +46,17 @@ from streamlit_option_menu import option_menu
 
 with st.sidebar:
     selected = option_menu("Menu", ["Fornecedores", 'Simulador', 'Importações'],
-        icons=['credit-card', 'cash', 'airplane'], menu_icon="cast", default_index=1)
+        icons=['credit-card', 'cash', 'cart'], menu_icon="cast", default_index=1)
     selected
     
 if selected == 'Fornecedores':
+    st.tittle(selected)
     st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
     st.write("COMPRAS PARAGUAI: [NOVO](https://mobile.comprasparaguai.com.br/)")
     st.write("APPLE: [NOVO](https://www.apple.com/)")
     
 if selected == 'Simulador':
+     st.tittle(selected)
     st.title('Simulador importação')
     preco = st.number_input('Preço:', 1, 10000, step=100)
     imposto = st.number_input('Imposto:', 0, 60, 7)
