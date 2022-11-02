@@ -45,13 +45,18 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 with st.sidebar:
-    selected = option_menu("Menu", ["Fornecedores", 'Importações','Simulador'],
-        icons=['credit-card', 'pc','cash'], menu_icon="cast", default_index=1)
+    selected = option_menu("Menu", ["Fornecedores", 'Simulador', 'Importações'],
+        icons=['credit-card', 'cash', 'airplane'], menu_icon="cast", default_index=1)
     selected
+    
+if selected == 'Fornecedores':
+    st.write("BACKMARKET: [RECONDICIONADOS](https://www.backmarket.com/en-us)")
+    st.write("COMPRAS PARAGUAI: [NOVO](https://mobile.comprasparaguai.com.br/)")
+    st.write("APPLE: [NOVO](https://www.apple.com/)")
     
 if selected == 'Simulador':
     st.title('Simulador importação')
-    preco = st.number_input('Preço:', 1, 999, step=1)
+    preco = st.number_input('Preço:', 1, 10000, step=100)
     imposto = st.number_input('Imposto:', 0, 60, 7)
     taxaloja = st.number_input('Taxa Loja:', 0.00, 4.99, 2.99, 1.00)
     resultado = ((imposto / 100) * preco + preco)
