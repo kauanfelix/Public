@@ -56,7 +56,7 @@ if selected == 'Fornecedores':
     st.write("APPLE: [NOVO](https://www.apple.com/)")
     
 if selected == 'Simulador':
-     st.tittle(selected)
+    st.tittle(selected)
     st.title('Simulador importação')
     preco = st.number_input('Preço:', 1, 10000, step=100)
     imposto = st.number_input('Imposto:', 0, 60, 7)
