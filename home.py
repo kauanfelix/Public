@@ -12,7 +12,7 @@ selected = option_menu(None, [ 'Financeiro', 'Importações'],
 
 if selected == 'Financeiro':
     st.title(selected)
-    df = pd.read_excel(io='debitos.xlsx', engine='openpyxl', sheet_name='DESPESAS', skiprows=0, usecols='A:C',nrows=100)
+    df = pd.read_excel(io='debitos.xlsx', engine='openpyxl', sheet_name='DESPESAS', skiprows=0, usecols='A:D',nrows=100)
     st.dataframe(df)
     total = st.write(df['TOTAL'].sum())
 
