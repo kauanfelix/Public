@@ -22,8 +22,7 @@ if selected == 'Simulador':
     st.title(selected)
     requisicao = requests.get('https://economia.awesomeapi.com.br/all/USD-BRL')
     cotacao = requisicao.json()
-    dolar = (['USD']['bid'])
-    st.write(dolar)
+    dolar = st.write(cotacao['USD']['bid'])
     col1, col2 =st.columns(2)
     with col1:
         preco = st.number_input('Preço:', 0, 10000, 50, step=100)
