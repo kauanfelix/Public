@@ -1,4 +1,4 @@
-import streamlit as st
+'''import streamlit as st
 import pandas as pd
 from openpyxl import load_workbook
 import time
@@ -38,5 +38,14 @@ with tab2:
 
 with tab3:
     df = pd.read_excel(io='testes.xlsx',engine='openpyxl',sheet_name="MOTORISTAS")
-    st.dataframe(df)
+    st.dataframe(df)'''
+
+
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+with st.sidebar:
+    selected = option_menu("Main Menu", ["Home", 'Settings'],
+        icons=['house', 'gear'], menu_icon="cast", default_index=1)
+    selected
 
