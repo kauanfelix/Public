@@ -31,8 +31,8 @@ if selected == 'Simulador':
         resultado = ((imposto / 100) * preco + preco)
         st.info(f'U$ {resultado + taxaloja}')
     with col2:
-        input_cotacao = st.number_input('Câmbio Dólar:', 4.50, 5.50, 5.00, 0.01)
-        input_spread = st.number_input('Spread:', 0.0, 5.0, 1.0)
+        input_cotacao = st.number_input('Câmbio Dólar:', 4.50, 5.50, dolar, 0.01)
+        input_spread = st.number_input('Spread:', 0.0, 5.0, 0.99)
         input_iof = st.number_input('Iof:', 1.0, 6.39, 1.1, 5.28)
         spread = (input_cotacao * (input_spread / 100)) + input_cotacao
         iof = (spread * (input_iof / 100)) + spread
