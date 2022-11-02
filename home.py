@@ -3,10 +3,9 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Importações", page_icon=":laptop:", layout="centered")
 
-with st.sidebar:
-    selected = option_menu("Menu", ["Fornecedores", 'Simulador', 'Importações'],
-        icons=['credit-card', 'cash', 'cart'], menu_icon="cast", default_index=1)
-    selected
+#with st.sidebar:
+selected = option_menu("Menu", ["Fornecedores", 'Simulador', 'Importações'], icons=['credit-card', 'cash', 'cart'], menu_icon="cast", default_index=1)
+
     
 if selected == 'Fornecedores':
     st.title(selected)
