@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas
 from streamlit_option_menu import option_menu
+import requests
+import json
+
 
 st.set_page_config(page_title="Importações", page_icon=":laptop:", layout="centered")
 # with st.sidebar:
@@ -17,6 +20,9 @@ if selected == 'Fornecedores':
 
 if selected == 'Simulador':
     st.title(selected)
+    requisicao = requests.get('https://economia.awesomeapi.com.br/all/USD-BRL')
+    cotacao = requisicao.json()
+    st.header('Dolár R$'+['USD']['bid'])
     col1, col2 =st.columns(2)
     with col1:
         preco = st.number_input('Preço:', 0, 10000, 50, step=100)
@@ -32,7 +38,6 @@ if selected == 'Simulador':
         iof = (spread * (input_iof / 100)) + spread
         total = st.info(f'R$ {iof * resultado}')
         st.write(iof)
-
 if selected == 'Importações':
     st.title(selected)
     st.write(
