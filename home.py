@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Importações", page_icon=":laptop:", layout="centered")
@@ -28,3 +29,6 @@ if selected == 'Simulador':
     st.info(f'U$ {resultado + taxaloja}')
     total = st.info(f'R$ {iof * resultado}')
 
+if selected == 'Importações':
+    st.title(selected)
+    st.write("GOOGLE PLANILHA: [REGISTROS](https://docs.google.com/spreadsheets/d/1PwVx36z6Anr2PpsTLKt24wBGuCaT4GShj3aUdoa9u4I/edit#gid=0)")
