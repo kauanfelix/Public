@@ -19,7 +19,7 @@ if selected == 'Financeiro':
     fig = px.pie(df, values='tip', names='day')
     fig.show()
 
-    total = st.write(df['TOTAL'].sum())
+    #total = st.write(df['TOTAL'].sum())
 
 
 if selected == 'Importações':
