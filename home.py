@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import requests
 import pandas as pd
+import plotly-express as px
 
 st.set_page_config(page_title="GESTÃO PESSOAL", page_icon=":bar-chart:", layout="centered")
 # with st.sidebar:
@@ -14,6 +15,10 @@ if selected == 'Financeiro':
     st.title(selected)
     df = pd.read_excel(io='debitos.xlsx', engine='openpyxl', sheet_name='DESPESAS', skiprows=0, usecols='A:D',nrows=100)
     st.dataframe(df)
+    df = px.data.tips()
+    fig = px.pie(df, values='TOTAL', names='DESPESA')
+    fig.show()
+
     total = st.write(df['TOTAL'].sum())
 
 
