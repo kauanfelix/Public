@@ -16,7 +16,7 @@ if selected == 'Financeiro':
     df = pd.read_excel(io='debitos.xlsx', engine='openpyxl', sheet_name='DESPESAS', skiprows=0, usecols='A:D',nrows=100)
     st.dataframe(df)
     df = px.data.tips()
-    fig = px.pie(df, values='TOTAL', names='DESPESA')
+    fig = px.pie(df, values='tip', names='day')
     fig.show()
 
     total = st.write(df['TOTAL'].sum())
