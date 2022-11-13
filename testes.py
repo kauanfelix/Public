@@ -13,14 +13,7 @@ selected = option_menu(None, [ 'Financeiro', 'Importações'],
 
 if selected == 'Financeiro':
     st.title(selected)
-    df = pd.read_excel(io='debitos.xlsx', engine='openpyxl', sheet_name='DESPESAS', skiprows=0, usecols='A:D',nrows=100)
-    st.dataframe(df)
-    df = px.data.tips()
-    fig = px.pie(df, values='tip', names='day')
-    fig.show()
-
-    #total = st.write(df['TOTAL'].sum())
-
+    st.write('Não programei nada aqui ainda')   
 
 if selected == 'Importações':
     st.title(selected)
