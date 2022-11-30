@@ -1,7 +1,13 @@
-
-
 import smtplib
 import email.message
+import streamlit as st
+
+form = st.form("my_form")
+form.slider("Nomes")
+st.text_input("Nome")
+
+# Now add a submit button to the form:
+form.form_submit_button("Submit")
 
 def enviar_email(): 
     corpo_email = '''
@@ -23,4 +29,3 @@ def enviar_email():
     s.login(msg['From'], password)
     s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
     print('Email enviado')
-
