@@ -6,8 +6,11 @@ import openpyxl
 
 tabela = st.radio("ESCOLHA TABELA:",('PERFIPAR', 'BARBIERI', 'IBEMA ARA','IBEMA TVO','IBEMA EMF'))
 
-if tabela == 'NENHUMA':
-    st.write('NENHUMA.')
+if tabela == 'PERFIPAR':
+    st.title(f'TABELA {tabela}')
+    planilha = 'Logistic.xlsx'
+    df = pd.read_excel(io=planilha,engine='openpyxl',sheet_name=f'{tabela}')#,nrows=1000, usecols='A:Q')
+    st.dataframe(data=df)
 else:
     st.title(f'TABELA {tabela}')
     planilha = 'Logistic.xlsx'
