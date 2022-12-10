@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from st_aggrid import AgGrid # pip install streamlit-aggrid
+import openpyxl
 
 
 tabela = st.radio("ESCOLHA TABELA:",('PERFIPAR', 'BARBIERI', 'IBEMA ARA','IBEMA TVO','IBEMA EMF'))
