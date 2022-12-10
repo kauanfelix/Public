@@ -9,6 +9,6 @@ if tabela == 'NENHUMA':
     st.write('NENHUMA.')
 else:
     st.title(f'TABELA {tabela}')
-    planilha = 'Tabelas.xlsx'
+    planilha = 'Logistic.xlsx'
     df = pd.read_excel(io=planilha,engine='openpyxl',sheet_name=f'{tabela}')#,nrows=1000, usecols='A:Q')
     AgGrid(data=df)
