@@ -5,7 +5,7 @@ from openpyxl import load_workbook # pip install pil openpyxl
 # from st_aggrid import AgGrid, GridOptionsBuilder  # pip install streamlit-aggrid
 
 # configurações navegador
-caminho_icone = 'C:/Users/admin/OneDrive/Nuvem-Kauan/IconeRb.ico'
+caminho_icone = 'IconeRb.ico'
 icone = Image.open(caminho_icone)
 st.set_page_config(page_title="RODOBROTTO SISTEMAS", page_icon=icone, layout="wide")
 # sidebar
