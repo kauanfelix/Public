@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 from st_aggrid import AgGrid, GridOptionsBuilder  # pip install streamlit-aggrid
 from PIL import Image # pip install pil
+from openpyxl import load_workbook # pip install pil openpyxl
 
 
 # configurações navegador
