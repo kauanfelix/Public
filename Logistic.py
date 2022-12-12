@@ -1,21 +1,20 @@
 import pandas as pd
 import streamlit as st
-from st_aggrid import AgGrid, GridOptionsBuilder  # pip install streamlit-aggrid
 from PIL import Image # pip install pil
 from openpyxl import load_workbook # pip install pil openpyxl
-
+# from st_aggrid import AgGrid, GridOptionsBuilder  # pip install streamlit-aggrid
 
 # configurações navegador
-caminho_icone = 'IconeRb.ico'
+caminho_icone = 'C:/Users/admin/OneDrive/Nuvem-Kauan/IconeRb.ico'
 icone = Image.open(caminho_icone)
 st.set_page_config(page_title="RODOBROTTO SISTEMAS", page_icon=icone, layout="wide")
-
 # sidebar
 st.sidebar.title(f'TABELAS')
 tabela = st.sidebar.radio("ESCOLHA TABELA:",('PERFIPAR', 'BARBIERI', 'IBEMA ARA','IBEMA TVO','IBEMA EMF'))
 
 if tabela == 'PERFIPAR':
     planilha = 'Logistic.xlsx'
+    st.header(f'{tabela}')
     df = pd.read_excel(io=planilha,engine='openpyxl',sheet_name=f'{tabela}')#,nrows=1000, usecols='A:Q')
     st.dataframe(data=df,)
 
@@ -279,13 +278,9 @@ if tabela == 'PERFIPAR':
         st.subheader(body=f'PESO TOTAL: {total_peso}')
         st.markdown('---')
 
-
-
 else:
     planilha = 'Logistic.xlsx'
-    df = pd.read_excel(io=planilha,engine='openpyxl',sheet_name=f'{tabela}')#,nrows=1000, usecols='A:Q')
-    gb = GridOptionsBuilder.from_dataframe(df, min_column_width=100)
-    AgGrid(data=df, fit_columns_on_grid_load=True,)
-
-
-
+    st.header(f'{tabela}')
+    df = pd.read_excel(io=planilha,engine='openpyxl',sheet_name=f'{tabela}')
+    st.dataframe(df)
+    #AgGrid(data=df, fit_columns_on_grid_load=True,)
