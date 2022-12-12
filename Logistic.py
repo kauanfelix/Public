@@ -10,11 +10,10 @@ caminho_icone = 'IconeRb.ico'
 caminho_excel = 'Logistic.xlsx'
 icone = Image.open(caminho_icone)
 st.set_page_config(page_title="RODOBROTTO SISTEMAS", page_icon=icone, layout="wide")
-aba_simulacao = pd.read_excel(io=caminho_excel, engine='openpyxl', sheet_name='SIMULAR')
+
 # sidebar
 st.sidebar.title(f'TABELAS')
 tabela = st.sidebar.radio("ESCOLHA TABELA:",('PERFIPAR', 'BARBIERI', 'IBEMA ARA','IBEMA TVO','IBEMA EMF'))
-
 
 if tabela == 'PERFIPAR':
     planilha = 'Logistic.xlsx'
