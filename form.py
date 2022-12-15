@@ -1,37 +1,24 @@
-
 import streamlit as st
 
-with st.form("my_form"):
-   st.write("Inside the form")
-   slider_val = st.slider("Form slider")
-   checkbox_val = st.checkbox("Form checkbox")
+# Create an empty container
+placeholder = st.empty()
 
-   # Every form must have a submit button.
-   submitted = st.form_submit_button("Submit")
-   if submitted:
-        st.write("slider", slider_val, "checkbox", checkbox_val)        
-st.write("Outside the form")
+actual_email = "kauan"
+actual_password = "123456"
 
-import smtplib
-import email.message
+# Insert a form in the container
+with placeholder.form("login"):
+    st.markdown("#### Enter your credentials")
+    email = st.text_input("Email")
+    password = st.text_input("Password", type="password")
+    submit = st.form_submit_button("Login")
 
-def enviar_email(): 
-    corpo_email = """
-    <p>Parágrafo1</p>
-    <p>Parágrafo2</p>
-    """
-
-    msg = email.message.Message()
-    msg['Subject'] = "Assunto"
-    msg['From'] = 'kauanfelix@icloud.com'
-    msg['To'] = 'administrativo@rodobrotto.com.br'
-    password = 'ilti gady sgch ulhx'
-    msg.add_header('Content-Type', 'text/html')
-    msg.set_payload(corpo_email)
-
-    s = smtplib.SMTP('smtp.gmail.com: 587')
-    s.starttls()
-    # Login Credentials for sending the mail
-    s.login(msg['From'], password)
-    s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
-    st.text('Email enviado')
+if submit and email == actual_email and password == actual_password:
+    # If the form is submitted and the email and password are correct,
+    # clear the form/container and display a success message
+    placeholder.empty()
+    st.success("Login successful")
+elif submit and email != actual_email and password != actual_password:
+    st.error("Login failed")
+else:
+    pass
