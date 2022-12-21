@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 from PIL import Image
+
+caminho_icone = 'IconRb.ico'
 icone = Image.open(caminho_icone)
 st.set_page_config(page_title="DASHBOARD RODOBROTTO", page_icon=icone, layout="wide")
 
