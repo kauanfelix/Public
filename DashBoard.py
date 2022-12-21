@@ -3,8 +3,9 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
-
-st.set_page_config(page_title="DASHBOARD RODOBROTTO", page_icon="bar-chart", layout="wide")
+from PIL import Image
+icone = Image.open(caminho_icone)
+st.set_page_config(page_title="DASHBOARD RODOBROTTO", page_icon=icone, layout="wide")
 
 planilha = st.sidebar.file_uploader(label='Planilha Fornecedor', type='xls')
 
